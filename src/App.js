@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from './logo.svg';
 import { Counter } from './features/counter/Counter';
+import { Cluster } from './features/cluster/Cluster'
 import './App.css';
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <Counter />
+        <Cluster />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
