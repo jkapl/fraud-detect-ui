@@ -9,7 +9,7 @@ export const clusterSlice = createSlice({
             broker: 0,
             zookeeper: 0
         },
-        err : ''
+        err: '',
     },
     reducers: {
         // reducers using Redux Toolkit and Immer for immutable state updates
