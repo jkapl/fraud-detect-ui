@@ -3,7 +3,9 @@ const express = require('express')
 const app = express()
 const port = 8080
 
-let { messages, getMessages } = require('./server/kafka');
+const axios = require('axios');
+
+// let { messages, getMessages } = require('./server/kafka');
 
 app.use(express.static(path.join(__dirname, 'build')))
 
@@ -14,7 +16,11 @@ app.get('/api/messages', (req, res) => {
     //     messages = require('./server/kafka');
     //     res.send(JSON.stringify(messages));
     // })()
-    res.send(JSON.stringify({messages: getMessages()}));
+    axios.get('http://localhost:8000/api/messages')
+        .then((response)=>{
+            res.send(response.data)
+        })
+    // res.send(JSON.stringify({messages: getMessages()}));
 })
 
 app.get('/api/cluster_health', (req, res) => res.send('Hello World!'))
