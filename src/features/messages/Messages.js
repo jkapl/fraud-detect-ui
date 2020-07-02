@@ -10,8 +10,9 @@ export function Messages() {
     const dispatch = useDispatch();
 
     const listMessages = messages.map((message) => 
-        <li>{message}</li>
-    );
+        <li>{message.value}</li>
+    )
+
     return (
         <div>
             <span>Messages: </span>
@@ -22,5 +23,5 @@ export function Messages() {
                 Poll for messages
             </button>
         </div>
-    )
+    );
 }

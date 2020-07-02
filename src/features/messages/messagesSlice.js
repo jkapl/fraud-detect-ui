@@ -26,7 +26,7 @@ export const { updateMessagesState, updateMessagesFailed } = messagesSlice.actio
 export const updateMessagesAsync = () => async dispatch => {
     // fetch request
     try {
-        const { messages } = await getMessages();
+        const messages = await getMessages();
         dispatch(updateMessagesState(messages));
     } catch (err) {
         dispatch(updateMessagesFailed(err.toString()));

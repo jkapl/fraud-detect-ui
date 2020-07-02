@@ -8,7 +8,7 @@ import {
 export function Cluster() {
     const status = useSelector(selectState);
     const dispatch = useDispatch();
-    console.log(status)
+    
     return (
         <div>
             <span>Brokers: {status.broker}</span>
